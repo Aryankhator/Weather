@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: someAQ")]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+    var body: some View {
+        ZStack {
+            LinearGradient (gradient: Gradient(colors: [Color.blue, Color("lightblue")]),
+                            startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Delhi, India")
                     .font(.system(size: 32, weight: .medium, design: .default))
