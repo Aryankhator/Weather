@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isNight: Bool = false
+
     var body: some View {
         ZStack {
-            LinearGradient (gradient: Gradient(colors: [Color.blue, Color("lightblue")]),
+            LinearGradient (gradient: Gradient(colors: [isNight ? .black : .blue, isNight ? .gray :  Color("lightblue")]),
                             startPoint: .topLeading, endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
             VStack {
@@ -39,13 +41,16 @@ struct ContentView: View {
                 }
                 Spacer()
                 Button {
+                    withAnimation {
+                        isNight.toggle()
+                    }
                     print("tapped")
                 } label: {
                     Text("Change Day Time")
                         .frame(width: 280, height: 50)
                         .font(.system(size: 20, weight: .bold, design: .default))
                         .background(.white)
-                        .cornerRadius(10) 
+                        .cornerRadius(10)
                 }
                 Spacer()
             }
