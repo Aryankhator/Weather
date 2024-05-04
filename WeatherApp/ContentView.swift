@@ -28,7 +28,7 @@ struct ContentView: View {
                         .font(.system(size: 70, weight: .medium))
                         .foregroundStyle(.white)
                 }
-                Spacer()
+                .padding(.bottom, 40)
                 HStack(spacing: 20) {
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 40)
                     WeatherDayView(dayOfWeek: "WDE", imageName: "sun.max.fill", temp: 45)
@@ -36,6 +36,16 @@ struct ContentView: View {
                     WeatherDayView(dayOfWeek: "FRI", imageName: "sunset.fill", temp: 30)
                     WeatherDayView(dayOfWeek: "SAT", imageName: "snow", temp: 7)
                     
+                }
+                Spacer()
+                Button {
+                    print("tapped")
+                } label: {
+                    Text("Change Day Time")
+                        .frame(width: 280, height: 50)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .background(.white)
+                        .cornerRadius(10) 
                 }
                 Spacer()
             }
